@@ -10,17 +10,25 @@
   <div id="root"></div>
 
   <script>
-    let root = document.querySelector('#root');
+
+    let dataForm = {
+      parentData: document.querySelector('#root'),
+      childrenData: document.createElement('ul'),
+      grandChildrenData: document.createElement('li'),
+      grandChildrenTextData: bb.textContent = "Hello!"
+    }
+
+    //let root = document.querySelector('#root'); //리터럴이다.
+    let root = dataForm.parentData; //리터럴이 아니다.
     console.dir(root);
 
-    // root.children[0] = "hello";
-    let aa = document.createElement('ul');
+    let aa = dataForm.childrenData;
     root.appendChild(aa);
 
-    let bb = document.createElement('li');
+    let bb = dataForm.grandChildrenData;
     aa.appendChild(bb);
-    bb.textContent = "Hello!";
-    
+    bb.textContent = dataForm.grandChildrenTextData;
+
   </script>
 </body>
 </html>
