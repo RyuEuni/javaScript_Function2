@@ -28,7 +28,7 @@
 
     //노수민, 곽윤호
     let data = dataList("div", "100vw", "100vh", "cadetblue", "flex", "center", "center", "relative")
-
+    //root div의 스타일 속성을 함수안에 객체를 만들어서 지정해줌
     let root_div = data.parentData;
     root_div.id = 'root';
     root_div.style.width = data.widthData;
@@ -68,6 +68,7 @@
     
     
     for(let i = 0; i < 3; i++){ //류은이
+      //for문 3번 돌려서 자식div만들어 줌
       let div_child = document.createElement('div');
       root_div.appendChild(div_child);
       // let bb = div_child.style;
@@ -76,6 +77,8 @@
       div_child.style.borderRadius = "250px";
       div_child.style.opacity = "0.8";
       div_child.style.position = "absolute";
+
+      //조건문을 줘서 각 자식div에 스타일 지정해줌
       if (i===0) { //노수민
         childrenStyle(i, "300px", "300px", "salmon", "blur(20px)", "root");
         div_child.addEventListener('click', movement)
@@ -95,8 +98,8 @@
         // div_child.style.filter = "blur(20px)";
       }
       else if (i===2) { //류은이
-        childrenStyle(i,"-100px","50px","coral","blur(10px)","root");
-        div_child.addEventListener('click', changeColor)
+        childrenStyle(i,"-100px","50px","coral","blur(10px)","root"); //자식요소 스타일 지정해주는 함수 호출해줌
+        div_child.addEventListener('click', changeColor) //클릭 이벤트 함수 호출
         div_child.addEventListener('click', moveCycle)
         // div_child.style.marginTop="-100px";
         // div_child.style.marginLeft="50px";
@@ -107,6 +110,7 @@
     // 노수민
     let divFirstMovementCount = 0
     function movement() {
+      //마지막 원형 움직이는 함수
       document.getElementById('root').children[0].style.left = divFirstMovementCount * 30 + "px";
       divFirstMovementCount = divFirstMovementCount + 1;
       if(divFirstMovementCount===10) {
@@ -116,6 +120,7 @@
 
     let colorCount = 0;
     function changeColor () { //류은이, 노수민, 곽윤호
+      //배경화면 바꿔주는 함수.
       let randomColor = ["antiquewhite", "blue", "chartreuse", "darkgoldenrod", "firebrick", "green", "hotpink", "indigo", "khaki"];
       document.getElementById("root").style.backgroundColor = randomColor[colorCount];
       colorCount++;
@@ -126,6 +131,7 @@
     
     let moveCount = 100;
     function moveCycle(){ //류은이
+      //첫번째 원형 움직이는 함수
       document.getElementById('root').children[2].style.left = moveCount + "px";
       moveCount += 30;
 
@@ -145,6 +151,7 @@
     
     let pxCount = 10;
     function ABC () { //곽윤호
+      //두번째 원형 움직이는 함수
       pxCount+=10;
       this.style.top=pxCount+"px"
       this.style.left=pxCount+"px"
@@ -154,28 +161,6 @@
       }
     }
 
-        // childrenStyle(0, "500px", "500px", "black", "0.8", "root");
-    // childrenStyle(1, "500px", "500px", "black", "0.8", "root");
-    // childrenStyle(2, "500px", "500px", "black", "0.8", "root");
-
-
-    /* test ------------ */
-    // function appenTag() {
-      // let obj = {
-        // createTag : document.createElement(a),
-        // 
-      // }
-    // }
-
-    // let root = document.getElementById("root");
-    // // let pro = [root.style.width, root.style.height];
-    // let pro = [width, height];
-    // console.dir(pro);
-    // let rootStyle = root.style;
-    // // 'root.style.width'="100px";
-    // rootStyle.pro[0]="100px";
-    // rootStyle.pro[1]="100px";
-    
   </script>
 </body>
 </html>
