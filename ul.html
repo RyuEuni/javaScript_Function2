@@ -19,7 +19,8 @@
       }
       return obj
     }
-    let dataForm = dataFunc("#root", "ul", "li", "안녕~");
+    let tagArray = ["div", "footer", "section", "ul", "li"];
+    let dataForm = dataFunc("#root", tagArray[3], tagArray[1], "안녕~");
 
     //let root = document.querySelector('#root'); //리터럴이다.
     let root = dataForm.parentData; //리터럴이 아니다.
