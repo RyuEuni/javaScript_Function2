@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="main"></div>
+
+  <script>
+    function formFunc(v1, v2, v3){
+      let object = {
+        parentValue: document.createElement(v1),
+        childrenValue: document.createElement(v2),
+        childrenValueText: v3,
+      }
+      return object;
+    }
+
+    let tagArray2 = ["div", "h1", "p", "ul", "li"];
+    let mainForm = formFunc(tagArray2[0], tagArray2[1], "ㅋㅋㅋㅋ");
+
+    let main = document.querySelector("#main");
+    console.dir(main);
+    let div = mainForm.parentValue;
+    let h1 = mainForm.childrenValue;
+    h1.textcontent = mainForm.childrenValueText;
+    console.dir(h1);
+    main.appendChild(div);
+    div.appendChild(h1);
+  </script>
+</body>
+</html>

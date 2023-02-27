@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script>
+    function dataFunc(a, b, c, d){
+      //엘리먼트 만드는 걸 함수화 시킴. 함수안에 객체를 만들어서 이용
+      let obj = {
+        parentData: document.querySelector(a),
+        childrenData: document.createElement(b),
+        grandChildrenData: document.createElement(c),
+        grandChildrenTextData: d
+      }
+      return obj
+    }
+    //태그만들 때 필요한 종류를 배열로 만들고 함수를 부를 때 활용한다.
+    let tagArray = ["div", "footer", "section", "ul", "li"];
+    let dataForm = dataFunc("#root", tagArray[3], tagArray[1], "안녕~");
+
+    //let root = document.querySelector('#root'); //리터럴이다.
+    let root = dataForm.parentData; //리터럴이 아니다.
+    console.dir(root);
+
+    let aa = dataForm.childrenData;
+    root.appendChild(aa);
+
+    let bb = dataForm.grandChildrenData;
+    aa.appendChild(bb);
+    bb.textContent = dataForm.grandChildrenTextData;
+
+  </script>
+</body>
+</html>
