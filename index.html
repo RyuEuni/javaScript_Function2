@@ -20,11 +20,13 @@
     let rootElement = document.getElementById('root');
     console.dir(rootElement);
     let weekend = ["월요일 오늘", "화요일 심심", "수요일 쉼", "목요일 짱짱", "금요일 놀자", "토요일 고기", "일요일 잠"];
+    let backColor = ["Pink", "skyBlue", "green", "yellow", "gold", "salmon", "burlywood"];
 
     let counter = 0;
 
     rootElement.addEventListener('click', function(){
       rootElement.textContent = weekend[counter];
+      rootElement.style.backgroundColor = backColor[counter];
       counter = counter + 1;
       if(counter >= weekend.length){
         counter = 0;
