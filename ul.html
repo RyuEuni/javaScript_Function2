@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script>
+
+    let dataForm = {
+      parentData: document.querySelector('#root'),
+      childrenData: document.createElement('ul'),
+      grandChildrenData: document.createElement('li'),
+      grandChildrenTextData: bb.textContent = "Hello!"
+    }
+
+    //let root = document.querySelector('#root'); //리터럴이다.
+    let root = dataForm.parentData; //리터럴이 아니다.
+    console.dir(root);
+
+    let aa = dataForm.childrenData;
+    root.appendChild(aa);
+
+    let bb = dataForm.grandChildrenData;
+    aa.appendChild(bb);
+    bb.textContent = dataForm.grandChildrenTextData;
+
+  </script>
+</body>
+</html>
