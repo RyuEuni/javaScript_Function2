@@ -19,19 +19,24 @@
   <script>
     let rootElement = document.getElementById('root');
     console.dir(rootElement);
+    
     let weekend = ["월요일 오늘", "화요일 심심", "수요일 쉼", "목요일 짱짱", "금요일 놀자", "토요일 고기", "일요일 잠"];
     let backColor = ["Pink", "skyBlue", "green", "yellow", "gold", "salmon", "burlywood"];
 
     let counter = 0;
 
     rootElement.addEventListener('click', function(){
+      //rootElement에 리스너라는 이벤트를 추가해준다. 리스너엔 이벤트 값과 함수가 필요.
+      //함수 파라미터에 함수를 직접적으로 작성해줬다. counter가 클릭 시 1씩 증가하는 함수.
+
       rootElement.textContent = weekend[counter];
-      rootElement.style.backgroundColor = backColor[counter];
+      rootElement.style.backgroundColor = backColor[counter]; //1씩 증가하는 counter를 이용해 배열에 있는 순서대로 글씨와 색상을 바꿔줄 수 있다.
+
       counter = counter + 1;
       if(counter >= weekend.length){
-        counter = 0;
+        counter = 0; //조건문을 통해 배열 크기만큼만 증가했다가 다시 0이 되도록 설정.
       }
-      console.log(counter);
+      //console.log(counter);
     });
 
 
