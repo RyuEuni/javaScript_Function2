@@ -21,12 +21,18 @@
     console.dir(rootElement);
     let weekend = ["월요일 오늘", "화요일 심심", "수요일 쉼", "목요일 짱짱", "금요일 놀자", "토요일 고기", "일요일 잠"];
     let backColor = ["Pink", "skyBlue", "green", "yellow", "gold", "salmon", "burlywood"];
+    let fontSize = ["10pt", "15pt", "20pt", "25pt", "30pt", "35pt", "40pt"];
+    let size = ["100px", "200px", "300px", "400px", "500px", "600px", "700px"];
 
     let counter = 0;
 
     rootElement.addEventListener('click', function(){
       rootElement.textContent = weekend[counter];
       rootElement.style.backgroundColor = backColor[counter];
+      rootElement.style.fontSize = fontSize[counter];
+      rootElement.style.width = size[counter];
+      rootElement.style.height = size[counter];
+
       counter = counter + 1;
       if(counter >= weekend.length){
         counter = 0;
