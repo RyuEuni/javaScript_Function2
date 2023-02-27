@@ -5,16 +5,41 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+
+  <style>
+    #root{
+      width: 100px;
+      height: 100px;
+      background-color: cadetblue;
+    }
+  </style>
 </head>
 <body>
   <div id="root"></div>
   <script>
     let rootElement = document.getElementById('root');
     console.dir(rootElement);
-    let weekend = ["월요일 오늘", "수요일 쉼", "금요일 놀자"];
+    let weekend = ["월요일 오늘", "화요일 심심", "수요일 쉼", "목요일 짱짱", "금요일 놀자", "토요일 고기", "일요일 잠"];
+    let backColor = ["Pink", "skyBlue", "green", "yellow", "gold", "salmon", "burlywood"];
+    let fontSize = ["10pt", "15pt", "20pt", "25pt", "30pt", "35pt", "40pt"];
+    let size = ["100px", "200px", "300px", "400px", "500px", "600px", "700px"];
 
-    rootElement.textContent = weekend[2];
-    console.dir(rootElement);
+    let counter = 0;
+
+    rootElement.addEventListener('click', function(){
+      rootElement.textContent = weekend[counter];
+      rootElement.style.backgroundColor = backColor[counter];
+      rootElement.style.fontSize = fontSize[counter];
+      rootElement.style.width = size[counter];
+      rootElement.style.height = size[counter];
+
+      counter = counter + 1;
+      if(counter >= weekend.length){
+        counter = 0;
+      }
+      console.log(counter);
+    });
+
 
   </script>
 </body>
