@@ -10,13 +10,16 @@
   <div id="root"></div>
 
   <script>
-
-    let dataForm = {
-      parentData: document.querySelector('#root'),
-      childrenData: document.createElement('ul'),
-      grandChildrenData: document.createElement('li'),
-      grandChildrenTextData: bb.textContent = "Hello!"
+    function dataFunc(a, b, c, d){
+      let obj = {
+        parentData: document.querySelector(a),
+        childrenData: document.createElement(b),
+        grandChildrenData: document.createElement(c),
+        grandChildrenTextData: d
+      }
+      return obj
     }
+    let dataForm = dataFunc("#root", "ul", "li", "안녕~");
 
     //let root = document.querySelector('#root'); //리터럴이다.
     let root = dataForm.parentData; //리터럴이 아니다.
