@@ -7,14 +7,38 @@
   <title>Document</title>
 </head>
 <body>
-  <div id="root"></div>
+  <div id="root">
+    <div id="first"></div>
+    <div id="second"></div>
+  </div>
   <script>
-    let rootElement = document.getElementById('root');
-    console.dir(rootElement);
-    let weekend = ["월요일 오늘", "수요일 쉼", "금요일 놀자"];
+    let root = document.getElementById('root');
 
-    rootElement.textContent = weekend[2];
-    console.dir(rootElement);
+    root.style.width = "500px";
+    root.style.height = "500px";
+    root.style.border = "1px solid black";
+
+    const first = document.getElementById('first');
+    first.style.width = "200px";
+    first.style.width = "200px";
+    first.style.border = "1px solid red";
+
+    const second = document.getElementById('second');
+    second.style.width = "200px";
+    second.style.width = "200px";
+    second.style.border = "1px solid red";
+    
+    function makeElement(tagName, textNode){
+      let element = document.createElement(tagName);
+      element.innerText = textNode;
+      element.style.width = "100px";
+      element.style.height = "100px";
+      element.style.backgroundColor = "salmon";
+
+      return element;
+    }
+
+    first.appendChild(makeElement("section", "hello!"));
 
   </script>
 </body>
